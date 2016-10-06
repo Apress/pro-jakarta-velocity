@@ -1,0 +1,15 @@
+$aNumber + 3.2 = $math.add($aNumber, "3.2")
+$aNumber - 3.2 = $math.sub($aNumber, "3.2")
+$aNumber / 3.2 = $math.div($aNumber, "3.2")
+$aNumber * 3.2 = $math.mul($aNumber, "3.2")
+$aNumber ^ 3.2 = $math.pow($aNumber, "3.2")
+
+The minimum of $aNumber and 3.2 is $math.min($aNumber, "3.2")
+The maximum of $aNumber and 3.2 is $math.max($aNumber, "3.2")
+
+4.45678 rounded to 3 places is $math.roundTo(3, "4.45678")
+4.45678 rounded to the nearest integer is $math.roundToInt("4.45678")
+
+$math.random is a random number
+
+$math.random(1, 20) is a random number between 1 and 20

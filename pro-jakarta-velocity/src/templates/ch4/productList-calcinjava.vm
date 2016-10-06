@@ -1,0 +1,5 @@
+#foreach($product in $productList)
+$product.Name    $$product.Price
+#end
+
+Total Price: $$totalPrice

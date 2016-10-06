@@ -1,0 +1,7 @@
+#hello(1)
+#hello("World")
+#hello($who)
+Something
+#hello()
+#hello(1) #hello("you")
+Something else

@@ -1,0 +1,11 @@
+<project>
+    <name>Gimli's Widgetarium Documentation</name>
+    <menu header="User Documentation">
+        <item href="about/index.html">About</item>
+        <item href="gettingStarted/index.html">Getting Started</item>    
+    </menu>
+    <menu header="Developer Documentation">
+        <item href="manual/index.html">Manual</item>
+        <item href="javadoc/index.html">JavaDoc</item>
+    </menu>
+</project>

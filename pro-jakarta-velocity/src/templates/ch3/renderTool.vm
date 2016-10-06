@@ -1,0 +1,6 @@
+#set($methods = ["length()", "toString()", "toLowerCase()", "toUpperCase()"])
+#set($name = '$str')
+
+#foreach($method in $methods)
+$render.eval($ctx, "${name}.$method")
+#end

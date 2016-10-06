@@ -1,0 +1,2 @@
+My first name is $map.firstName
+My last name is $map.lastName

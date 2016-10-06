@@ -1,0 +1,18 @@
+Today's Date is $date <BR>
+The path to this file is $relativePath<br>
+
+The Project Name Is: $project.getChild('name').getTextTrim()
+<br>
+
+These are the sections:<br>
+#foreach($section in $root.getChild('sections').getChildren())
+	$section.getAttribute('name').getValue()<br>
+#end
+
+#set($footer = $root.selectNodes("sections/section[@name='footer']"))
+The footer section content is: $footer.get(0).getText()<br><br>
+
+The XML for the footer node is $escape.getText($footer.toString())<br><br>
+
+The XML for the whole input is:
+<br>$escape.getText($root.content.toString())

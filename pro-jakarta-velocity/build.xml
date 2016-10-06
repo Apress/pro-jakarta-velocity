@@ -1,0 +1,211 @@
+<project name="Pro Jakarta Velocity" basedir="." default="compile">
+
+	<!-- properties for build -->
+	<property name="dir.src" value="src" />
+	<property name="dir.lib" value="lib" />
+	<property name="dir.build" value="build" />
+
+	<!-- classpath -->
+	<path id="project.classpath">
+		<pathelement path="${dir.build}" />
+		<fileset dir="${dir.lib}" includes="*.jar" />
+	</path>
+			
+	<!-- Chapter 6 specific properties -->
+	<property name="ch6.web" value="src/web/ch6" />
+	<property name="ch6.templates" value="src/templates/ch6" />
+	<property name="ch6.data" value="src/data/ch6" />
+
+	<!-- Chapter 7 specific properties/tasks -->
+	<property name="anakia.class" value="org.apache.velocity.anakia.AnakiaTask" />
+	<property name="ch7.xml" value="src/xml/ch7" />
+	<property name="anakia.output" value="anakia-output" />
+	
+	<taskdef classname="${anakia.class}" name="anakia" classpathref="project.classpath" />
+
+	<!-- Chapter 8 specific properties/tasks -->
+	<property name="texen.class" value="org.apache.velocity.texen.ant.TexenTask"/>
+	<property name="dvsl.class" value="org.apache.tools.dvsl.DVSLTask"/>
+	<property name="namecard.class" value="com.apress.pjv.ch8.NameCardTask"/>
+	<property name="ch8.web" value="src/web/ch8"/>
+	<property name="ch8.templates" value="${dir.src}/templates/ch8"/>
+	<property name="ch8.xml" value="src/xml/ch8" />
+	<property name="texen.output" value="texen-output"/>
+	<property name="dvsl.output" value="dvsl-output"/>
+	
+	<taskdef classname="${texen.class}" name="texen" classpathref="project.classpath" />
+	<taskdef classname="${dvsl.class}" name="dvsl" classpathref="project.classpath" />
+	<taskdef classname="${namecard.class}" name="namecard" classpathref="project.classpath" />
+		
+	<target name="clean" description="Removes all previously generated class files">
+		<delete dir="${dir.build}" />
+		<mkdir dir="${dir.build}" />
+	</target>
+
+	<target name="compile" description="Compile all the examples" depends="clean">
+		<javac srcdir="${dir.src}" destdir="${dir.build}">
+			<classpath refid="project.classpath" />
+			<exclude name="**/Test*.java" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<target name="dist-tar" description="Create a .tar.gz distribution of the source code" depends="compile">
+		<tar destfile="pjv.tar" basedir="${basedir}">
+			<include name="**/*.*" />
+			<exclude name="**/*.class" />
+			<exclude name="pjv.tar" />
+			<exclude name="pjv.tar.gz" />
+		</tar>
+		<gzip zipfile="${basedir}/pjv.tar.gz" src="pjv.tar" />
+		<delete file="pjv.tar" />
+	</target>
+
+	<target name="ch6-war" description="Build a WAR file for the web application examples in chapter 6" depends="compile">
+		<war destfile="pjv.war" webxml="${ch6.web}/web.xml">
+			<classes dir="${dir.build}">
+				<include name="**/*.class" />
+			</classes>
+			<classes dir="${ch6.templates}">
+				<include name="**/*.vm" />
+			</classes>
+			<classes dir="${ch6.data}">
+				<include name="**/*.xml" />
+			</classes>
+			<lib dir="${dir.lib}">
+				<include name="**/*.jar" />
+			</lib>
+			<fileset dir="${dir.src}">
+				<include name="velocity.properties" />
+			</fileset>
+			<webinf dir="${ch6.web}">
+				<exclude name="web.xml" />
+				<include name="**/*.xml" />
+			</webinf>
+		</war>
+	</target>
+
+	<!-- Chapter 7 Specific Targets -->
+	<target name="anakia-setup">
+		<mkdir dir="${anakia.output}" />
+	</target>
+	
+	<!-- Hello World example -->
+	<target name="helloWorld" depends="anakia-setup" description="Anakia Hello World Example">
+		<anakia basedir="${ch7.xml}/helloWorld" 
+			destdir="${anakia.output}" 
+			extension=".html" 
+			excludes="**/*.html" 
+			includes="**/*.xml" 
+			style="helloWorld.vsl" 
+			velocityPropertiesFile="${dir.src}/velocity.properties"/>
+	</target>
+	
+	<!-- Hello People example -->
+	<target name="helloPeople" depends="anakia-setup" description="Anakia Hello People Example">
+		<anakia basedir="${ch7.xml}/helloPeople" 
+			destdir="${anakia.output}" 
+			extension=".html" 
+			excludes="**/*.html" 
+			includes="**/*.xml" 
+			style="helloPeople.vsl" 
+			velocityPropertiesFile="${dir.src}/velocity.properties"/>
+	</target>
+	
+	<!-- Context example -->
+	<target name="contextExample" depends="anakia-setup" description="Anakia Context Example">
+		<anakia basedir="${ch7.xml}/contextExample" 
+			destdir="${anakia.output}" 
+			extension=".html" 
+			excludes="**/stylesheets/**" 
+			includes="**/*.xml" 
+			projectFile="./stylesheets/project.xml"
+			style="./style.vsl"
+			templatePath="${ch7.xml}/contextExample/stylesheets"/>
+	</target>
+		
+	<!-- Simple Project example -->
+	<target name="simpleProject" depends="anakia-setup" description="Anakia Simple Project Example">
+		<anakia basedir="${ch7.xml}/simpleProject" 
+			destdir="${anakia.output}/simpleProject" 
+			extension=".html" 
+			excludes="**/stylesheets/**" 
+			includes="**/*.xml" 
+			projectFile="./stylesheets/project.xml"
+			style="site.vsl"
+			templatePath="${ch7.xml}/simpleProject/stylesheets"/>
+	</target>
+	
+	<!-- Chapter 8 Specific Targets -->
+	<target name="ch8-war" depends="compile">
+		<war destfile="veltag.war" webxml="${ch8.web}/web.xml">
+			<classes dir="${dir.build}">
+				<include name="**/*.class" />
+			</classes>
+			<lib dir="${dir.lib}">
+				<include name="**/*.jar" />
+			</lib>
+			<fileset dir="${ch8.web}">
+				<include name="**/*.jsp" />
+			</fileset>
+			<webinf dir="${ch8.web}">
+				<include name="**/*.tld" />
+			</webinf>
+		</war>
+	</target>
+	
+	<target name="texen-setup" description="Creates the Texen output directory">
+		<mkdir dir="${texen.output}"/>
+	</target>
+	
+	<target name="helloWorld-texen" depends="texen-setup">
+		<texen controltemplate="helloWorldControl.vm"
+			   templatepath="${ch8.templates}/texen/"
+			   outputdirectory="${texen.output}"
+			outputfile="helloWorld.log"
+		/>
+	</target>
+	
+	<target name="helloWorldImproved-texen" depends="texen-setup">
+		<texen controltemplate="helloWorldImprovedControl.vm"
+			   templatepath="${ch8.templates}/texen/"
+			   outputdirectory="${texen.output}"
+			   contextproperties="${dir.src}/texen.properties"
+			outputfile="helloWorldImproved.log"
+		/>
+	</target>
+		
+	<target name="namecard" depends="texen-setup">
+		<namecard controltemplate="nameCardControl.vm"
+			   templatepath="${ch8.templates}/texen/"
+			   outputdirectory="${texen.output}"
+			   contextproperties="${dir.src}/texen.properties"
+			   peopleProperties="${dir.src}/people.properties"
+			outputfile="namecard.log"
+		/>
+	</target>
+	
+	<target name="dvsl-setup">
+		<mkdir dir="${dvsl.output}"/>
+	</target>
+	
+	<target name="dvsl-toolbox" depends="dvsl-setup">
+		<dvsl basedir="${ch8.xml}"
+			destdir="${dvsl.output}"
+			includes="helloWorld.xml"
+			extension=".txt"
+			style="${ch8.templates}/dvsl/toolbox.dvsl"
+			toolboxfile="src/dvsl.properties"
+			/>
+	</target>
+	
+	<target name="dvsl-beans" depends="dvsl-setup">
+		<dvsl basedir="${ch8.xml}"
+			destdir="${dvsl.output}"
+			includes="beans/**.xml"
+			extension=".java"
+			style="${ch8.templates}/dvsl/beans.dvsl"
+			toolboxfile="src/dvsl.properties"
+			/>
+	</target>
+</project>

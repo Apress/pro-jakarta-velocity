@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>Product List</title>
+	<head>
+	<body>
+		<h2>Product List</h2>
+		<form method="POST" action="/pjv/store/productList">
+			<select name="category">
+				<option value="-1">All</option>
+				#foreach ($category in $categories)
+					<option value="$category.categoryId">$category.name</option>
+				#end
+			</select>
+			<input type="submit" name="filter" value="filter">
+		</form>
+		<hr>
+		#foreach ($product in $products)
+		
+		<a href="/pjv/store/productDetail?pID=$product.productId" style="font-size:14pt">
+		$product.name
+		</a><br>
+		
+		$product.price 
+		
+		<a href="/pjv/store/addToCart?pID=$product.productId">[Add To Cart]<a>
+		
+		<br><br>
+		#end
+	</body>
+</html>

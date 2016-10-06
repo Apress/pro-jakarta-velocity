@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+
+ "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+
+ "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <action-mappings>
+        <action type="com.apress.pjv.ch6.struts.ProductListAction" path="/productList">
+            <forward name="success" path="/productList.vm"/>
+        </action>
+        <action type="com.apress.pjv.ch6.struts.ProductDetailAction" path="/productDetail">
+            <forward name="success" path="/productDetail.vm"/>
+        </action>
+        <action type="com.apress.pjv.ch6.struts.ProductDetailAction" path="/pfProductDetail">
+            <forward name="success" path="/pfProductDetail.vm"/>
+        </action>
+        <action type="com.apress.pjv.ch6.struts.AddToCartAction" path="/addToCart">
+            <forward name="success" path="/store/showCart" contextRelative="false"/>
+        </action>
+        <action type="com.apress.pjv.ch6.struts.RemoveFromCartAction" path="/removeFromCart">
+            <forward name="success" path="/store/showCart" contextRelative="false"/>
+        </action>
+        <action type="com.apress.pjv.ch6.struts.ShowCartAction" path="/showCart">
+            <forward name="success" path="/cart.vm"/>
+        </action>
+    </action-mappings>
+    <controller processorClass="org.apache.struts.action.RequestProcessor" locale="false"/>
+</struts-config>

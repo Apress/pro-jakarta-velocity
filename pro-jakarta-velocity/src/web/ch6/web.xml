@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+<web-app>
+    <!-- Context Params -->
+    <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+    <!-- Simple HelloWorldServlet -->
+    <servlet>
+        <servlet-name>helloWorld</servlet-name>
+        <servlet-class>com.apress.pjv.ch6.HelloWorldServlet</servlet-class>
+        <init-param>
+            <param-name>properties</param-name>
+            <param-value>/velocity.properties</param-value>
+        </init-param>
+    </servlet>
+    <!-- VelocityViewServlet -->
+    <servlet>
+        <servlet-name>velocityTools</servlet-name>
+        <servlet-class>
+            org.apache.velocity.tools.view.servlet.VelocityViewServlet </servlet-class>
+        <init-param>
+            <param-name>org.apache.velocity.toolbox</param-name>
+            <param-value>/WEB-INF/toolbox.xml</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.apache.velocity.properties</param-name>
+            <param-value>/velocity.properties</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <!-- Struts Servlet Configuration -->
+    <servlet>
+        <servlet-name>struts</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- Spring Context Loader -->
+    <servlet>
+		<servlet-name>context</servlet-name>
+		<servlet-class>org.springframework.web.context.ContextLoaderServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- Spring Dispatcher -->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+    <!-- Store Mapping -->
+    <servlet-mapping>
+        <!--<servlet-name>struts</servlet-name>-->
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/store/*</url-pattern>
+    </servlet-mapping>
+    <!-- Map *.vm files to Velocity -->
+    <servlet-mapping>
+        <servlet-name>velocityTools</servlet-name>
+        <url-pattern>*.vm</url-pattern>
+    </servlet-mapping>
+    <!-- Mapping for Hello World -->
+    <servlet-mapping>
+        <servlet-name>helloWorld</servlet-name>
+        <url-pattern>/helloWorld/*</url-pattern>
+    </servlet-mapping>
+</web-app>

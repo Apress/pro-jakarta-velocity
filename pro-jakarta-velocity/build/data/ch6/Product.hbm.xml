@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+    <class name="com.apress.pjv.ch6.Product" table="Products">
+        <id name="productId" type="int" unsaved-value="null">
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string"/>
+        <property name="description" type="string"/>
+        <property name="price" type="double"/>
+        <property name="category" column="categoryId" type="com.apress.pjv.ch6.Category"/>
+    </class>
+</hibernate-mapping>

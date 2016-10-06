@@ -1,0 +1,13 @@
+<html>
+	<head>
+		<title>Person List</title>
+	</head>
+	<body>
+		<ul>
+			#foreach($person in $root.getChildren())
+				<li>$person.getAttribute("lastName").getValue() , 
+				    $person.getAttribute("firstName").getValue()</li>
+			#end
+		</ul>
+	</body>
+</html>

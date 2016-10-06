@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<title>Gimli's Widgetarium | Search Results</title>
+	</head>
+	<body>
+		<table>
+			#writeProductList($products)
+		</table>
+	</body>
+</html>

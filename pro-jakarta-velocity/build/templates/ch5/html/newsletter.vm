@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>A P R E S S . C O M | Books for Professionals, by Professionals ...</title>
+<base href="http://www.apress.com">
+</head>
+<body text="#000000" vLink="#333399" link="#333399" leftmargin="0" background="/img/v1/bkgd.gif" topmargin="0" marginheight="0" marginwidth="0"> 
+<table cellspacing="0" cellpadding="0" width="780" border="0"> 
+  <tbody> 
+    <tr valign="top" align="left"> 
+      <td> <table cellspacing="0" cellpadding="0" width="166" border="0"> 
+          <tbody> 
+            <tr valign="top" align="left"> 
+              <td valign="top" align="left" width="166" height="109"> <a href = "/"><img src="/img/v1/aMod.gif" height="118" width="166" border="0"></a><br /> </td> 
+            </tr> 
+          </tbody> 
+        </table></td> 
+      <td> <table cellspacing="0" cellpadding="0" width="614" border="0"> 
+          <tbody> 
+            <tr valign="top" align="left"> 
+              <td valign="top" align="left" width="614" height="40"> <img height="40" src="/img/v1/top.gif" alt="" width="614" border="0"><br /> </td> 
+            </tr> 
+          </tbody> 
+        </table> 
+        <table cellspacing="0" cellpadding="0" width="614" border="0"> 
+          <tbody> 
+            <tr valign="top" align="left"> 
+              <td valign=top align=left width="614" height="45"> <img height="45" src="/img/v1/mid.gif" alt="" width="614" border="0"><br /> </td> 
+            </tr> 
+          </tbody> 
+        </table> 
+        <table cellspacing="0" cellpadding="0" width="614" border="0"> 
+          <tbody> 
+            <tr valign="top" align="left"> 
+              <td valign="top" align="left" width="614" height="24"> <img height="24" src="/img/v1/bot.gif" alt="" width="614" border="0"><br /> </td> 
+            </tr> 
+          </tbody> 
+        </table> 
+        <!-- Start of Newsletter Content --> 
+        <h1>Hi $newsletter.Subscriber.FirstName $newsletter.Subscriber.LastName and welcome to the Apress Monthly Newsletter</h1> 
+        <h2>We have a great selection of new books for you this week:</h2> 
+        <table border="0">
+           #foreach($section in $newsletter.Sections) #set($include = false) #foreach($cat in $newsletter.Subscriber.SubscribedCategories) #if($cat == $section.Category) #set($include = true) #end #end #if($include)
+          <tr> 
+            <td style="text-weight:bold; text-decoration:underline" bgcolor>$section.Category.Name              </td> 
+          </tr> 
+          <tr> 
+            <td>$section.Content</td> 
+          </tr> 
+          <tr> 
+            <td><br>
+              View more details about $section.Category.Name click <a href="$section.Category.WebLink">here</a>
+            <hr>  
+          </tr> 
+          #end #end
+        </table> 
+        <h3>To unsubscribe from this newsletter click <a href="http://www.apress.com/unsubscribe/$newsletter.Subscriber.EmailAddress">here</a></h3> 
+        <!-- End of Newsletter Content --> </td> 
+    </tr> 
+  </tbody> 
+</table> 
+</body>
+</html>

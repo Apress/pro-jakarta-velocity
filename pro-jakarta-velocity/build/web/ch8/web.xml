@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+<web-app>
+    <servlet>
+        <servlet-name>foo</servlet-name>
+        <servlet-class>com.apress.pjv.ch8.FooServlet</servlet-class>
+        <init-param>
+            <param-name>viewName</param-name>
+            <param-value>/veltag.jsp</param-value>
+            <!--<param-value>/veltagStrict.jsp</param-value>-->
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>foo</servlet-name>
+        <url-pattern>/foo/*</url-pattern>
+    </servlet-mapping>
+</web-app>

@@ -1,0 +1,7 @@
+<document>
+    <sections>
+        <section name="header">This is the header</section>
+        <section name="body">This is the middle section</section>
+        <section name="footer">This is the footer</section>
+    </sections>
+</document>

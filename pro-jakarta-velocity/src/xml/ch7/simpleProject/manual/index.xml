@@ -1,0 +1,10 @@
+<document>
+    <properties>
+           <author email="robh@cakesolutions.net">Rob Harrop</author>
+    </properties>
+    <sections>
+        <section header="Manual">
+            Here is the developer's manual
+        </section>
+    </sections>
+</document>

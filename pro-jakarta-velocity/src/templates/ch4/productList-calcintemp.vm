@@ -1,0 +1,7 @@
+#set($totalPrice = 0)
+#foreach($product in $productList)
+$product.Name    $$product.Price
+#set($totalPrice = $math.add($totalPrice, $product.Price))
+#end
+
+Total Price: $$totalPrice

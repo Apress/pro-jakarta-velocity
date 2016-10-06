@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- View Resolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+        <property name="viewClass">
+            <value>org.springframework.web.servlet.view.velocity.VelocityView</value>
+        </property>
+    </bean>
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="configLocation">
+            <value>velocity.properties</value>
+        </property>
+    </bean>
+    <!-- Multi Action Controller to handle store actions -->
+    <bean id="storeController" class="com.apress.pjv.ch6.spring.StoreActionController">
+        <property name="methodNameResolver">
+            <ref local="storeControllerResolver"/>
+        </property>
+        <property name="storeManager">
+            <ref bean="storeManager"/>
+        </property>
+    </bean>
+    <!-- Method Resolver for the Store Controller-->
+    <bean id="storeControllerResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+        <property name="mappings">
+            <props>
+                <prop key="/productList">handleProductList</prop>
+                <prop key="/addToCart">handleAddToCart</prop>
+                <prop key="/removeFromCart">handleRemoveFromCart</prop>
+                <prop key="/showCart">handleShowCart</prop>
+                <prop key="/productDetail">handleProductDetail</prop>
+                <prop key="/pfProductDetail">handlePrintFriendlyProductDetail</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- Manage URL to Controller Mappings -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/productList">storeController</prop>
+                <prop key="/addToCart">storeController</prop>
+                <prop key="/removeFromCart">storeController</prop>
+                <prop key="/showCart">storeController</prop>
+                <prop key="/productDetail">storeController</prop>
+                <prop key="/pfProductDetail">storeController</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

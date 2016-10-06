@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Toolbox Demo</title>
+	</head>
+	<body>
+		## add a cookie
+		$cookie.add("myCookie", "someValue")
+		
+		#set($cookies = $cookie.getAll())
+		<h2>You have the following cookies:</h2>
+		{<br>
+		#foreach($ck in $cookies)
+			$ck.name=$ck.value<br>
+		#end
+		}
+		
+		<h2>Here is a nice message:</h2>
+		$import.read('helloWorldTools.vm')
+		
+		<h2>Here are some interesting links</h2>
+		
+		<a href="
+			$link.setURI("helloWorldTools.vm").addQueryData("name", "James T. Kirk")">
+			Say Hello</a><br>
+			
+		<a href="
+			$link.setURI("http://www.apress.com/category.html").addQueryData("nID", "32")">
+			Java Books at Apress</a><br>
+		
+		$link.contextURL<br>
+		$link.contextPath<br>
+		
+		<h2>Here are some parameters</h2>
+		p1 = $params.getString("p1", "--unspecified--")<br>
+		p2 = $params.getInt("p2", 0)<br>
+		p3 = <br>
+		{<br>
+		#foreach($i in $params.getInts("p3"))
+			$i<br>
+		#end
+		}
+	</body>
+</html>

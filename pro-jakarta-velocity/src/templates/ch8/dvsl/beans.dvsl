@@ -1,0 +1,43 @@
+#match("bean")
+package $attrib.package;
+
+$context.applyTemplates("imports/import")
+/**
+* $attrib.desc
+*/
+public class $attrib.name {
+
+$context.applyTemplates("property")
+}
+#end
+
+#match("import")
+import $node.value();
+#end
+
+#match("property")
+	#set($nameForMethod = $context.toolbox.beantool.initCap($attrib.name))
+	
+	/**
+	* Store the value of $attrib.name property.
+	*/
+	private $attrib.type $attrib.name;
+	
+	/**
+	* Get the value of $attrib.name property.
+	* $attrib.desc
+	*/
+	public $attrib.type get${nameForMethod}() {
+		return this.$attrib.name;
+	}
+
+#if(	(!$attrib.readonly))
+	/**
+	*Set the value of the $attrib.name property
+	*$attrib.desc
+	*/
+	public void set$nameForMethod($attrib.type $attrib.name) {
+		this.$attrib.name = $attrib.name;
+	}	
+#end
+#end

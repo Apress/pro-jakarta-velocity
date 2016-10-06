@@ -1,0 +1,4 @@
+#set($uname = "robh")
+#set($suffix = "@cakesolutions.net")
+
+My e-mail address is: $uname$suffix

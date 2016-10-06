@@ -1,0 +1,7 @@
+#set($uname = "robh")
+#set($suffix = "@cakesolutions.net")
+#set($address = "$uname$suffix")
+#set($quote = '"')
+#set($link = "<a href=${quote}mailto:$address${quote}>$address</a>") 
+
+Mail me at: $link

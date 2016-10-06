@@ -1,0 +1,10 @@
+<document>
+    <properties>
+           <author email="robh@cakesolutions.net">Rob Harrop</author>
+    </properties>
+    <sections>
+        <section header="About">
+            This is the documentation for Gimli's Widgetarium
+        </section>
+    </sections>
+</document>

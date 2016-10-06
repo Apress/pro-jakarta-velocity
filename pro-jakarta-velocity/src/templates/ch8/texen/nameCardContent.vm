@@ -1,0 +1,9 @@
+<html>
+	<head>
+		<title>Name Card: $person.name</title>
+	</head>
+	<body>
+		<h1>$person.name</h1>
+		E-Mail Address: <a href="mailto:$person.emailAddress">$person.emailAddress</a>
+	</body>
+</html>

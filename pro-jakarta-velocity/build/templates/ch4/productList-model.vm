@@ -1,0 +1,5 @@
+#foreach($product in $model.productList)
+$product.Name    $$product.Price
+#end
+
+Total Price: $$model.totalPrice

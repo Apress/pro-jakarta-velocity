@@ -1,0 +1,10 @@
+#set ($companyName = "Legolas Industries")
+<html>
+	<head>
+		<title>$companyName Homepage</title>
+	</head>
+	<body>
+		<h1>Welcome!!</h1>
+		#parse("pageFooter2.vm")
+	</body>
+</html> 

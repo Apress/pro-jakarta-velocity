@@ -1,0 +1,5 @@
+#set($name = "World")
+#if($request.getParameter("name"))
+#set($name = $request.getParameter("name"))
+#end
+Hello $name $!request.getParameter("lastName")

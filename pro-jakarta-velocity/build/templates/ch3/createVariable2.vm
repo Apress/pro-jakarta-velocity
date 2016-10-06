@@ -1,0 +1,9 @@
+#set($str = "A String")
+#set($num = 12345)
+#set($bool = true)
+Output
+------
+
+$str
+$num
+$bool

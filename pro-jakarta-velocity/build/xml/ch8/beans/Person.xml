@@ -1,0 +1,9 @@
+<bean name="Person" package="com.apress.pjv.dvsl" desc="A class representing a person">
+    <imports>
+        <import>java.util.List</import>
+    </imports>
+    <property name="id" type="int" readonly="true" desc="The person's identification number."/>
+    <property name="firstName" type="String" desc="The person's first name"/>
+    <property name="lastName" type="String" desc="The person's last name"/>
+    <property name="children" type="List" desc="A List of the person's children"/>
+</bean>

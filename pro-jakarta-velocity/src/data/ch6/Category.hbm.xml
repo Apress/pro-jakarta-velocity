@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.apress.pjv.ch6.Category" table="Categories">
+        <id name="categoryId" type="int" unsaved-value="null" >
+            <generator class="assigned"/>
+        </id>
+
+        <property name="name" type="string"/>
+    </class>
+    
+</hibernate-mapping>

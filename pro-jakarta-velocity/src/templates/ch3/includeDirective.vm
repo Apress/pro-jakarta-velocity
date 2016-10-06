@@ -1,0 +1,9 @@
+<html>
+	<head>
+		<title>Legolas Industries Homepage</title>
+	</head>
+	<body>
+		<h1>Welcome!!</h1>
+		#include("pageFooter.vm")
+	</body>
+</html>

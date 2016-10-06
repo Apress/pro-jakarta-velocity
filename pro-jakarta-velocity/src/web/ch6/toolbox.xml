@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<toolbox>
+    <tool>
+        <key>randomMessage</key>
+        <class>com.apress.pjv.ch6.RandomMessageTool</class>
+    </tool>
+    <tool>
+        <key>cookie</key>
+        <scope>request</scope>
+        <class>org.apache.velocity.tools.view.tools.CookieTool</class>
+    </tool>
+    <tool>
+        <key>import</key>
+        <scope>session</scope>
+        <class>org.apache.velocity.tools.view.tools.ImportTool</class>
+    </tool>
+    <tool>
+        <key>link</key>
+        <scope>request</scope>
+        <class>org.apache.velocity.tools.view.tools.LinkTool</class>
+    </tool>
+    <tool>
+        <key>params</key>
+        <scope>request</scope>
+        <class>org.apache.velocity.tools.view.tools.ParameterParser</class>
+    </tool>
+</toolbox>

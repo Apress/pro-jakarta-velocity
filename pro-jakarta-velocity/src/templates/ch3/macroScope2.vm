@@ -1,0 +1,4 @@
+#macro (macro2)
+I am a local macro!
+#end
+Macro Output: #macro1()

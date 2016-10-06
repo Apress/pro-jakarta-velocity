@@ -1,0 +1,25 @@
+Hi $newsletter.Subscriber.FirstName $newsletter.Subscriber.LastName and welcome to the Apress Monthly Newsletter
+
+We have a great selection of new books for you this week:
+
+#foreach($section in $newsletter.Sections)
+#set($include = false)
+#foreach($cat in $newsletter.Subscriber.SubscribedCategories)
+#if($cat == $section.Category)
+#set($include = true)
+#end
+#end
+#if($include)
+------------------------------------------
+$section.Category.Name
+------------------------------------------
+
+$section.Content
+
+View more details about $section.Category.Name at: $section.Category.WebLink
+
+
+#end
+#end
+------------------------------------------
+To unsubscribe from this newsletter visit: http://www.apress.com/unsubscribe/$newsletter.Subscriber.EmailAddress

@@ -1,0 +1,13 @@
+<document>
+    <properties>
+           <author email="robh@cakesolutions.net">Rob Harrop</author>
+    </properties>
+    <sections>
+        <section header="Gimli's Widgetarium">
+            This is the documentation for Gimli's Widgetarium
+        </section>
+        <section header="Latest News">
+            There is <b>No News</b>.
+        </section>
+    </sections>
+</document>

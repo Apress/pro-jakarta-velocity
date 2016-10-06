@@ -1,0 +1,12 @@
+#set ($widgetCost = 13)
+#set ($wotsitCost = 14)
+#set ($shipCost = 2)
+#set ($widgetTotal = $widgetCost + $shipCost)
+#set ($wotsitTotal = $wotsitCost + $shipCost)
+Price List  
+----------
+
+\$widgetCost = $$widgetCost $$widgetTotal
+\$wotsitCost = $$wotsitCost $$wotsitTotal
+
+All prices in USD ($).

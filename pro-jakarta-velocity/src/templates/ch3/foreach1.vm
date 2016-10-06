@@ -1,0 +1,4 @@
+#set ($myArray = ["one", "two", "three"])
+#foreach($item in $myArray)
+	List Item: $item
+#end

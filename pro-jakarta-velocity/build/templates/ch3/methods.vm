@@ -1,0 +1,3 @@
+Day: $aDate.getDate()
+Month: $aDate.getMonth()
+Year: $aDate.getYear()

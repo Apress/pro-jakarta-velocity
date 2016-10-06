@@ -1,0 +1,9 @@
+#set($myNull1 = $validNull)
+#set($myNull2 = $invalidNull)
+
+$person rides $horse
+
+$rnd.generate()
+$rnd.generate()
+$rnd.generate()
+$rnd.generate()

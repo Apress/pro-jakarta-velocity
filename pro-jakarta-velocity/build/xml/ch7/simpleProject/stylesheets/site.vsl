@@ -1,0 +1,57 @@
+#macro (makeHeader)
+$project.getChild("name").getText()
+#end
+
+#macro (makeMenu)
+#foreach($menu in $project.selectNodes("menu"))
+	<span class="menuHeader">$menu.getAttributeValue("header")</span><br>
+	#foreach($item in $menu.getChildren())
+	<a href="$relativePath/$item.getAttributeValue("href")">$item.getTextTrim()</a><br>
+	#end
+#end
+#end
+
+#macro (makeProperties)
+#set($author = $root.getChild("properties").getChild("author"))
+<meta name="author" value="$author.getTextTrim()">
+<meta name="email" value="$author.getAttributeValue("email")">
+#end
+
+#macro (makeDoc)
+#foreach($section in $root.selectNodes("sections/section"))
+	<div class="sectionHeader">$section.getAttributeValue("header")</div>
+	$section.content
+#end
+#end
+<html>
+	<head>
+		<title>#makeHeader()</title>
+		<style type="text/css">
+			.pageHeader {
+				background-color: Navy;
+				color: White;
+				font-size: 18pt;
+			}
+			.sectionHeader {
+				background-color: Navy;
+				color: White;
+				font-size: 12pt;
+			}
+			.menuHeader {
+				font-weight: bold;
+			}
+		</style>
+		#makeProperties()
+	</head>
+	<body>
+		<table border="0" width="100%">
+			<tr>
+				<td colspan="2" class="pageHeader">#makeHeader()</td>
+			</tr>
+			<tr>
+				<td width="200">#makeMenu()</td>
+				<td>#makeDoc()</td>
+			</tr>
+		</table>
+	</body>
+</html>

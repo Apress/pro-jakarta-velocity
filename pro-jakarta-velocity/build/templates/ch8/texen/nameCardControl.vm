@@ -1,0 +1,4 @@
+#foreach($person in $people)
+	#set($fileName = $strings.concat([$person.id, ".html"]))
+	$generator.parse("nameCardContent.vm", $fileName, "person", $person)
+#end

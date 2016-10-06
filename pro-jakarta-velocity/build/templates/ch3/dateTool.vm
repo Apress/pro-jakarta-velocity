@@ -1,0 +1,7 @@
+Today's date is:       $date
+Today's date is also:  $date.long           #* using property shortcut *#
+Today's date is also:  $date.get('long')    #* using full syntax *#
+The date and time is:  $date.default $date.short
+
+Another date is:       $aDate
+Another date is also:  $date.format('medium', $aDate)

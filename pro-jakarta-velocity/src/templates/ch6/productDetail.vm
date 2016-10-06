@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<title>$product.name</title>
+	</head>
+	<body>
+		<div style="background-color:Navy; color:White; font-size: 22pt">
+		$product.name</div><br>
+		<i>$product.description</i><br>
+		<br>
+		<span style="color: Red;">&pound;$product.price</span> 
+		<a href="/pjv/store/addToCart?pID=$product.productId">[Add To Cart]<a>
+		<br>
+		<a href="/pjv/store/pfProductDetail?pID=$product.productId" target="_blank">
+		[print friendly]</a>
+	</body>
+</html>

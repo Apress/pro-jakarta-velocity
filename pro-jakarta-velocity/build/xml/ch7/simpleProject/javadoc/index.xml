@@ -1,0 +1,10 @@
+<document>
+    <properties>
+           <author email="robh@cakesolutions.net">Rob Harrop</author>
+    </properties>
+    <sections>
+        <section header="JavaDoc">
+            Click <a href="#">here</a> for the JavaDoc
+        </section>
+    </sections>
+</document>

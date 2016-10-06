@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Your Cart</title>
+	</head>
+	<body>
+	<h1>Your Cart</h1>
+	#if($cart.items.size() > 0)
+		<table border="1" cellspacing="1">
+		<tr>
+			<th>Product Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Sub Total</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+		</tr>
+		#foreach($cartItem in $cart.items)
+		<tr>
+			<td>
+			<a href="/pjv/store/productDetail?pID=$cartItem.product.productId"
+			   style="font-size:14pt">
+			   $cartItem.product.name</a></td>
+			
+			<td>$cartItem.product.price</td>
+			
+			<td>$cartItem.quantity</td>
+			
+			<td>$cartItem.subTotal</td>
+			
+			<td>
+			<a href="/pjv/store/addToCart?pID=$cartItem.product.productId"
+			   style="font-size:14pt">
+			   [add another]</a></td>
+			
+			<td>
+			<a href="/pjv/store/removeFromCart?pID=$cartItem.product.productId"
+			   style="font-size:14pt">
+			   [remove]</a></td>
+		</tr>
+		#end
+		</table>
+	#else
+		<i>No items in cart</i>
+	#end
+	<br>
+	<a href="/pjv/store/productList">[back to product list]</a>
+	</body>
+</html>

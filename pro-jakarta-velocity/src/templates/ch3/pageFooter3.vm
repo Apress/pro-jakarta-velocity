@@ -1,0 +1,2 @@
+#set ($innerVar = "This is an inner variable")
+<h3>Copyright &copy; $companyName 2004</h3>

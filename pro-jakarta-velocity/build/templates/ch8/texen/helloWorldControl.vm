@@ -1,0 +1,3 @@
+#set($name = "World")
+$generator.parse("helloWorldContent.vm", "helloWorld.txt", "name", $name)
+Generated helloWorld.txt in $outputDirectory on $now

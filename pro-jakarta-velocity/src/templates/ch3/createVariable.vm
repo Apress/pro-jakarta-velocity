@@ -1,0 +1,2 @@
+#set($msg = "Hello World!")
+I have a message for you: $msg

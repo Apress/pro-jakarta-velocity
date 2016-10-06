@@ -1,0 +1,7 @@
+#set ($widgetCost = "12.99")
+#set ($wotsitCost = "13.99")
+Price List
+----------
+
+\$widgetCost = $$widgetCost
+\$wotsitCost = $$wotsitCost

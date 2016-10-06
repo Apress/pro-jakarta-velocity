@@ -1,0 +1,6 @@
+#match("root")
+Message from the XML: $node.msg
+Random Message: $context.toolbox.random.generateMessage()
+Footer set in tool box: $context.toolbox.footer
+Version set in tool box: $context.toolbox.version
+#end

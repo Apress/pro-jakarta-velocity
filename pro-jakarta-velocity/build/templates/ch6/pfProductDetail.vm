@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>$product.name</title>
+	</head>
+	<body>
+		<div style="font-size: 22pt">$product.name</div><br>
+		<i>$product.description</i><br>
+		<br>
+		<span>&pound;$product.price</span>
+		<br>
+		<a href="/pjv/store/pfProductDetail?pID=$product.productId"
+		   target="_blank">[print friendly]</a>
+	</body>
+</html>

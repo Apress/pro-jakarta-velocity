@@ -1,0 +1,2 @@
+$generator.parse("helloWorldImprovedContent.vm", "helloWorldImproved.txt")
+Generated helloWorldImproved.txt in $outputDirectory on $now

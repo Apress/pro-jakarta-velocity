@@ -1,0 +1,45 @@
+Sat May 22 15:24:16 BST 2004  [debug] AvalonLogSystem initialized using logfile 'velocity.log'
+Sat May 22 15:24:16 BST 2004   [info] ************************************************************** 
+Sat May 22 15:24:16 BST 2004   [info] Starting Jakarta Velocity v1.4
+Sat May 22 15:24:16 BST 2004   [info] RuntimeInstance initializing.
+Sat May 22 15:24:16 BST 2004   [info] Default Properties File: org/apache/velocity/runtime/defaults/velocity.properties
+Sat May 22 15:24:16 BST 2004   [info] Trying to use logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Sat May 22 15:24:16 BST 2004   [info] Using logger class org.apache.velocity.runtime.log.AvalonLogSystem
+Sat May 22 15:24:16 BST 2004   [info] Default ResourceManager initializing. (class org.apache.velocity.runtime.resource.ResourceManagerImpl)
+Sat May 22 15:24:16 BST 2004   [warn] ResourceManager : No configuration information for resource loader named 'jar'. Skipping.
+Sat May 22 15:24:16 BST 2004   [info] Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : initialization starting.
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch3'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch4'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch5'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch7'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch9'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : adding path './src/templates/ch10'
+Sat May 22 15:24:16 BST 2004   [info] FileResourceLoader : initialization complete.
+Sat May 22 15:24:16 BST 2004   [info] Resource Loader Instantiated: org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+Sat May 22 15:24:16 BST 2004   [info] ClasspathResourceLoader : initialization starting.
+Sat May 22 15:24:16 BST 2004   [info] ClasspathResourceLoader : initialization complete.
+Sat May 22 15:24:16 BST 2004   [info] ResourceCache : initialized. (class org.apache.velocity.runtime.resource.ResourceCacheImpl)
+Sat May 22 15:24:16 BST 2004   [info] Default ResourceManager initialization complete.
+Sat May 22 15:24:16 BST 2004   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+Sat May 22 15:24:16 BST 2004   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+Sat May 22 15:24:16 BST 2004   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+Sat May 22 15:24:16 BST 2004   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Include
+Sat May 22 15:24:16 BST 2004   [info] Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+Sat May 22 15:24:16 BST 2004   [info] Loaded User Directive: com.apress.pjv.ch10.HelloDirective
+Sat May 22 15:24:16 BST 2004   [info] Loaded User Directive: com.apress.pjv.ch10.ImageDirective
+Sat May 22 15:24:16 BST 2004   [info] Created: 20 parsers.
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : initialization starting.
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : adding VMs from VM library template : VM_global_library.vm
+Sat May 22 15:24:16 BST 2004  [error] ResourceManager : unable to find resource 'VM_global_library.vm' in any resource loader.
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : error using  VM library template VM_global_library.vm : org.apache.velocity.exception.ResourceNotFoundException: Unable to find resource 'VM_global_library.vm'
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro :  VM library template macro registration complete.
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : allowInline = true : VMs can be defined inline in templates
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : allowInlineLocal = false : VMs defined inline will be  global in scope if allowed.
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : messages on  : VM system will output logging messages
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : autoload off  : VM system will not automatically reload global library macros
+Sat May 22 15:24:16 BST 2004   [info] Velocimacro : initialization complete.
+Sat May 22 15:24:16 BST 2004   [info] Velocity successfully started.
+Sat May 22 15:24:16 BST 2004   [info] ResourceManager : found eventHandler.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+Sat May 22 15:24:16 BST 2004  [error] RHS of #set statement is null. Context will not be modified. eventHandler.vm [line 2, column 1]
